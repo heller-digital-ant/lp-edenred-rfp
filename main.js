@@ -9,6 +9,20 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+// Guide mockup — gradient follows cursor
+const mockup = document.querySelector('.guide-mockup__cover');
+if (mockup) {
+  document.addEventListener('mousemove', (e) => {
+    const rect = mockup.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = e.clientX - cx;
+    const dy = e.clientY - cy;
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+    mockup.style.background = `linear-gradient(${angle}deg, #F72717 0%, #FF007D 100%)`;
+  });
+}
+
 // Smooth active state on nav CTA
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {

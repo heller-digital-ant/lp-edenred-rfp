@@ -331,35 +331,48 @@ h3 { font-size: 1.2rem; font-weight: 500; }
 }
 .pain__inner {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 80px;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
   align-items: center;
 }
-.pain__number {
-  font-size: 5rem;
-  font-weight: 700;
-  color: var(--red);
-  line-height: 1;
+.pain__video {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.pain__video video {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  margin-bottom: 16px;
 }
 .pain__label {
   font-size: 1rem;
   font-weight: 500;
   color: var(--gray-700);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .pain__desc { color: var(--gray-500); font-size: 0.9rem; }
+.pain__content {
+  background: var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+}
+.pain__content h2 {
+  margin-bottom: 32px;
+}
 
 .pain__list { list-style: none; }
 .pain__item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--gray-200);
+  padding: 10px 0;
   font-size: 1rem;
   color: var(--gray-700);
 }
-.pain__item:first-child { border-top: 1px solid var(--gray-200); }
 .pain__x {
   color: var(--red);
   font-weight: 700;
@@ -374,6 +387,13 @@ h3 { font-size: 1.2rem; font-weight: 500; }
 .how {
   padding: 120px 0;
   background: var(--white);
+}
+.how__image {
+  width: 100%;
+  max-width: 936px;
+  margin: 24px auto -40px;
+  display: block;
+  mix-blend-mode: multiply;
 }
 
 .steps {
@@ -429,7 +449,7 @@ h3 { font-size: 1.2rem; font-weight: 500; }
 .case-study__quote {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   color: var(--white);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.6;
   font-style: italic;
   quotes: "„" """;
@@ -518,8 +538,10 @@ h3 { font-size: 1.2rem; font-weight: 500; }
    CARD BREAK
    ============================================ */
 .card-break {
-  padding: 120px 0;
-  background: var(--white);
+  padding: 140px 0;
+  background:
+    linear-gradient(to right, rgba(255,255,255,1) 35%, rgba(255,255,255,0.5) 65%, rgba(255,255,255,0) 100%),
+    url('assets/background_card_payment.png') center/cover no-repeat;
 }
 .card-break__inner {
   display: grid;
@@ -527,6 +549,7 @@ h3 { font-size: 1.2rem; font-weight: 500; }
   gap: 80px;
   align-items: center;
 }
+.card-break__visual { display: none; }
 .card-break__text h2 { margin: 12px 0 20px; }
 .card-break__text p { color: var(--gray-500); margin-bottom: 32px; max-width: 440px; }
 .card-break__list {
@@ -572,14 +595,21 @@ h3 { font-size: 1.2rem; font-weight: 500; }
 .guide-mockup {
   position: relative;
   width: 260px;
+  perspective: 800px;
 }
 .guide-mockup__cover {
-  background: var(--red);
+  background: linear-gradient(135deg, #F72717 0%, #FF007D 100%);
   border-radius: 6px 16px 16px 6px;
   padding: 40px 36px;
   position: relative;
   z-index: 2;
   box-shadow: 8px 12px 40px rgba(255,0,0,0.25), 2px 4px 12px rgba(0,0,0,0.15);
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+.guide-mockup:hover .guide-mockup__cover {
+  transform: rotateY(-12deg);
+  box-shadow: 16px 16px 48px rgba(255,0,0,0.3), 4px 6px 16px rgba(0,0,0,0.2);
 }
 .guide-mockup__logo {
   height: 22px;
@@ -833,7 +863,8 @@ h3 { font-size: 1.2rem; font-weight: 500; }
   .hero__visual { display: none; }
   .hero__proof { text-align: center; }
 
-  .pain__inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+  .pain__inner { grid-template-columns: 1fr; gap: 24px; }
+  .pain__video { text-align: center; }
 
   .how,
   .features,

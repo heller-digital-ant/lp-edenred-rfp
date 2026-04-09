@@ -419,6 +419,11 @@ h3 { font-size: 1.2rem; font-weight: 500; }
   z-index: 2;
   margin: 0 -32px;
   background: var(--white);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+.how__circle--center:hover {
+  transform: scale(1.06) translateY(-6px) rotate(15deg);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.16);
 }
 .how__circle img {
   width: 100%;
@@ -901,6 +906,10 @@ h3 { font-size: 1.2rem; font-weight: 500; }
   .features,
   .card-break { padding: 80px 0; }
 
+  .how__circles { margin: 32px auto 0; }
+  .how__circle--side { width: 110px; height: 110px; }
+  .how__circle--center { width: 140px; height: 140px; margin: 0 -16px; }
+
   .case-study {
     grid-template-columns: 1fr;
     padding: 40px 32px;
@@ -912,8 +921,12 @@ h3 { font-size: 1.2rem; font-weight: 500; }
   .card-break__text p { margin-left: auto; margin-right: auto; }
   .card-break__list { align-items: center; }
 
-  .lead-magnet__inner { grid-template-columns: 1fr; gap: 48px; }
-  .lead-magnet__visual { display: none; }
+  .lead-magnet__inner { grid-template-columns: 1fr; gap: 40px; }
+  .lead-magnet__visual { display: flex; justify-content: center; }
+  .guide-mockup { width: 180px; }
+  .guide-mockup__cover { padding: 28px 24px; }
+  .guide-mockup__logo { height: 16px; margin-bottom: 24px; }
+  .guide-mockup__title { font-size: 1.05rem; margin-bottom: 24px; }
   .lead-magnet__form-row { flex-direction: column; }
   .contact__inner { grid-template-columns: 1fr; gap: 48px; }
 
